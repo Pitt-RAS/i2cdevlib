@@ -43,7 +43,10 @@ THE SOFTWARE.
 ===============================================
 */
 
-#include "I2Cdev.h"
+#include "I2CdevPittMicromouse.h"
+
+#define I2Cdev I2CdevPittMicromouse
+#define Wire Wire1
 
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
 
@@ -1455,3 +1458,6 @@ uint16_t I2Cdev::readTimeout = I2CDEV_DEFAULT_READ_TIMEOUT;
     }
 
 #endif
+
+#undef I2Cdev
+#undef Wire

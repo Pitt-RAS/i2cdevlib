@@ -44,8 +44,13 @@ THE SOFTWARE.
 ===============================================
 */
 
-#ifndef _I2CDEV_H_
-#define _I2CDEV_H_
+#ifndef _I2CDEV_PITT_MICROMOUSE_H_
+#define _I2CDEV_PITT_MICROMOUSE_H_
+
+#define PITT_MICROMOUSE_I2CDEV_PATCH_VERSION 1
+
+#define I2Cdev I2CdevPittMicromouse
+#define Wire Wire1
 
 // -----------------------------------------------------------------------------
 // I2C interface implementation setting
@@ -275,4 +280,7 @@ class I2Cdev {
 
 #endif // I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_NBWIRE
 
-#endif /* _I2CDEV_H_ */
+#undef I2Cdev
+#undef Wire
+
+#endif /* _I2CDEV_PITT_MICROMOUSE_H_ */
