@@ -30,16 +30,19 @@ THE SOFTWARE.
 ===============================================
 */
 
-#ifndef _MPU9150_9AXIS_MOTIONAPPS41_H_
-#define _MPU9150_9AXIS_MOTIONAPPS41_H_
+#ifndef _MPU9150_9AXIS_MOTIONAPPS41_PITT_MICROMOUSE_H_
+#define _MPU9150_9AXIS_MOTIONAPPS41_PITT_MICROMOUSE_H_
 
-#include "I2Cdev.h"
+#include "I2CdevPittMicromouse.h"
 #include "helper_3dmath.h"
 
 // MotionApps 4.1 DMP implementation, built using the MPU-9150 "MotionFit" board
 #define MPU9150_INCLUDE_DMP_MOTIONAPPS41
 
-#include "MPU9150.h"
+#include "MPU9150PittMicromouse.h"
+
+#define MPU9150 MPU9150PittMicromouse
+#define I2Cdev I2CdevPittMicromouse
 
 // Tom Carpenter's conditional PROGMEM code
 // http://forum.arduino.cc/index.php?topic=129407.0
@@ -849,4 +852,7 @@ uint16_t MPU9150::dmpGetFIFOPacketSize() {
     return dmpPacketSize;
 }
 
-#endif /* _MPU9150_9AXIS_MOTIONAPPS41_H_ */
+#undef MPU9150 MPU9150PittMicromouse
+#undef I2Cdev I2CdevPittMicromouse
+
+#endif /* _MPU9150_9AXIS_MOTIONAPPS41_PITT_MICROMOUSE_H_ */

@@ -34,10 +34,15 @@ THE SOFTWARE.
 ===============================================
 */
 
-#ifndef _MPU9150_H_
-#define _MPU9150_H_
+#ifndef _MPU9150_PITT_MICROMOUSE_H_
+#define _MPU9150_PITT_MICROMOUSE_H_
 
-#include "I2Cdev.h"
+#define PITT_MICROMOUSE_MPU9150_PATCH_VERSION 1
+
+#include "I2CdevPittMicromouse.h"
+
+#define MPU9150 MPU9150PittMicromouse
+#define I2Cdev I2CdevPittMicromouse
 
 // Tom Carpenter's conditional PROGMEM code
 // http://forum.arduino.cc/index.php?topic=129407.0
@@ -1035,4 +1040,7 @@ class MPU9150 {
         uint8_t buffer[14];
 };
 
-#endif /* _MPU9150_H_ */
+#undef MPU9150
+#undef I2Cdev
+
+#endif /* _MPU9150_PITT_MICROMOUSE_H_ */

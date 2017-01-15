@@ -34,7 +34,10 @@ THE SOFTWARE.
 ===============================================
 */
 
-#include "MPU9150.h"
+#include "MPU9150PittMicromouse.h"
+
+#define MPU9150 MPU9150PittMicromouse
+#define I2Cdev I2CdevPittMicromouse
 
 /** Default constructor, uses default I2C address.
  * @see MPU9150_DEFAULT_ADDRESS
@@ -3154,3 +3157,6 @@ uint8_t MPU9150::getDMPConfig2() {
 void MPU9150::setDMPConfig2(uint8_t config) {
     I2Cdev::writeByte(devAddr, MPU9150_RA_DMP_CFG_2, config);
 }
+
+#undef MPU9150
+#undef I2Cdev
