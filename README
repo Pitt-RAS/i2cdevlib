@@ -1,3 +1,21 @@
+NOTICE
+
+This project is patched for Pitt Micromouse.
+
+Upstream is <https://github.com/jrowberg/i2cdevlib>.
+
+Copy the following directories into your Arduino libraries directory:
+
+ - Arduino/I2CdevPittMicromouse
+ - Arduino/MPU9150PittMicromouse
+
+
+
+
+
+
+
+
 Jennic platform added!
 
 ============================================================================
